@@ -1,4 +1,4 @@
-# UniConvert — Universal File Converter
+﻿# UniConvert — Universal File Converter
 
 A full-stack MERN web application that converts files between multiple formats directly in your browser. No sign-up, no ads, no file-size gimmicks.
 
@@ -12,18 +12,18 @@ Drop any supported file directly onto the converter card or click to browse from
 
 ### Document Conversion
 
-| Input      | Output | Details                                                                          |
-| ---------- | ------ | -------------------------------------------------------------------------------- |
-| DOCX / DOC | PDF    | Converts Microsoft Word documents to PDF while preserving layout and formatting  |
-| TXT        | PDF    | Wraps plain text in a clean, paginated PDF using PDFKit                          |
-| TXT        | DOCX   | Packages plain text into a proper Word document (.docx) using the `docx` library |
+| Input | Output | Details |
+|---|---|---|
+| DOCX / DOC | PDF | Converts Microsoft Word documents to PDF while preserving layout and formatting |
+| TXT | PDF | Wraps plain text in a clean, paginated PDF using PDFKit |
+| TXT | DOCX | Packages plain text into a proper Word document (.docx) using the `docx` library |
 
 ### Spreadsheet Conversion
 
-| Input      | Output | Details                                                                                              |
-| ---------- | ------ | ---------------------------------------------------------------------------------------------------- |
-| XLSX / XLS | CSV    | Reads all sheets from an Excel workbook and exports the first sheet as a comma-separated values file |
-| CSV        | XLSX   | Parses a CSV file and creates a properly formatted Excel workbook                                    |
+| Input | Output | Details |
+|---|---|---|
+| XLSX / XLS | CSV | Reads all sheets from an Excel workbook and exports the first sheet as a comma-separated values file |
+| CSV | XLSX | Parses a CSV file and creates a properly formatted Excel workbook |
 
 ### Image Conversion
 
@@ -59,18 +59,18 @@ The entire UI is fully responsive — works on mobile phones, tablets, and deskt
 
 ## Tech Stack
 
-| Layer                  | Technology                       |
-| ---------------------- | -------------------------------- |
-| Frontend               | React 19, Vite 7, Tailwind CSS 4 |
-| Routing                | React Router DOM 7               |
-| HTTP client            | Axios                            |
-| Backend                | Node.js, Express 5               |
-| File uploads           | Multer (50 MB limit)             |
-| Word → PDF             | docx-pdf                         |
-| TXT → DOCX             | docx                             |
-| PDF generation         | PDFKit                           |
-| Image conversion       | Sharp                            |
-| Spreadsheet conversion | XLSX                             |
+| Layer | Technology |
+|---|---|
+| Frontend | React 19, Vite 7, Tailwind CSS 4 |
+| Routing | React Router DOM 7 |
+| HTTP client | Axios |
+| Backend | Node.js, Express 5 |
+| File uploads | Multer (50 MB limit) |
+| Word → PDF | docx-pdf |
+| TXT → DOCX | docx |
+| PDF generation | PDFKit |
+| Image conversion | Sharp |
+| Spreadsheet conversion | XLSX |
 
 ---
 
@@ -144,15 +144,15 @@ Open `http://localhost:5173` in your browser.
 
 ## API Endpoints
 
-| Method | Endpoint                | Description                          |
-| ------ | ----------------------- | ------------------------------------ |
-| POST   | `/convert/doc-to-pdf`   | DOCX / DOC → PDF                     |
-| POST   | `/convert/txt-to-pdf`   | TXT → PDF                            |
-| POST   | `/convert/txt-to-docx`  | TXT → DOCX                           |
-| POST   | `/convert/excel-to-csv` | XLSX / XLS → CSV                     |
-| POST   | `/convert/csv-to-excel` | CSV → XLSX                           |
-| POST   | `/convert/image`        | Image → Image (body: `outputFormat`) |
-| POST   | `/convert/image-to-pdf` | Image → PDF                          |
+| Method | Endpoint | Description |
+|---|---|---|
+| POST | `/convert/doc-to-pdf` | DOCX / DOC → PDF |
+| POST | `/convert/txt-to-pdf` | TXT → PDF |
+| POST | `/convert/txt-to-docx` | TXT → DOCX |
+| POST | `/convert/excel-to-csv` | XLSX / XLS → CSV |
+| POST | `/convert/csv-to-excel` | CSV → XLSX |
+| POST | `/convert/image` | Image → Image (body: `outputFormat`) |
+| POST | `/convert/image-to-pdf` | Image → PDF |
 
 All endpoints accept `multipart/form-data` with a `file` field. Maximum file size is **50 MB**.
 
